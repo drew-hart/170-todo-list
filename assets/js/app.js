@@ -12,3 +12,11 @@ $('ul').on('click', "span", function(event) {
   event.stopPropagation();
 });
 
+// add todo item when enter is hit
+$('input[type="text"]').on('keydown', function(event){
+  if(event.which === 13) {
+    $('ul').append(`<li><span><i class="fa fa-trash" aria-hidden="true"></i></span>${$(this).val()}</li>`)
+    $(this).val('');
+  }
+});
+
